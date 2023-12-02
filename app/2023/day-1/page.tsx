@@ -81,7 +81,7 @@ const Trebuchet: React.FC = () => {
         <div className='container'>
             <p>Sum of all calibration values (Part 1): {sumPart1}</p>
             <p>Sum of all calibration values (Part 2): {sumPart2}</p>
-            <FetchGist gistUrl="https://raw.githubusercontent.com/greengem/advent-of-code/main/app/2023/day-1/part-1/page.tsx" />
+            <FetchGist gistUrl="https://raw.githubusercontent.com/greengem/advent-of-code/main/app/2023/day-1/page.tsx" />
         </div>
         </>
     );

@@ -1,4 +1,5 @@
 'use client'
+import FetchGist from "@/utils/FetchGist";
 import { useState, useEffect } from "react";
 
 interface CubeCounts {
@@ -97,6 +98,7 @@ export default function CubeConundrum() {
     <div>
       <p>Sum of IDs for possible games (Part One): {sumOfIds}</p>
       <p>Sum of the power of the sets (Part Two): {totalPowerSum}</p>
+      <FetchGist gistUrl='https://raw.githubusercontent.com/greengem/advent-of-code/main/app/2023/day-2/page.tsx' />
     </div>
   );
 }
