@@ -2,8 +2,8 @@ import Link from "next/link";
 import { IconGift } from "@tabler/icons-react";
 
 const navLinks = [
-    { href: '/2023/day-1/part-1', title: 'Day 1 - Part 1' },
-    { href: '/2023/day-1/part-2', title: 'Day 1 - Part 2' },
+    { href: '/2023/day-1', title: 'Day 1 - Trebuchet' },
+    { href: '/2023/day-2', title: 'Day 2 - Cube Conundrum' },
 ];
   
 export default function SubNavbar() {
