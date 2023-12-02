@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Highlight from './Highlight';
 
-const FetchGist = ({ gistUrl }) => {
-    const [code, setCode] = useState('');
+interface FetchGistProps {
+    gistUrl: string;
+}
+
+const FetchGist: React.FC<FetchGistProps> = ({ gistUrl }) => {
+    const [code, setCode] = useState<string>('');
 
     useEffect(() => {
         fetch(gistUrl)
