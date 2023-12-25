@@ -6,6 +6,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navba
 const menuItems = [
     { label: "Day 1: Trebuchet", href: "/2023/day-1" },
     { label: "Day 2: Cube Conundrum", href: "/2023/day-2" },
+    { label: "Day 3: Gear Ratios", href: "/2023/day-3" },
 ];
 
 export default function MainNavigation() {
