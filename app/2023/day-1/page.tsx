@@ -13,7 +13,7 @@ export default async function Trebuchet() {
     return (
         <>
             <PageHeading title="Day 1: Trebuchet" />
-            <TrebuchetSolution solution={solution} input={input} />
+            <TrebuchetSolution input={input} />
             <SyntaxHighlight solution={solution} />
         </>
     );

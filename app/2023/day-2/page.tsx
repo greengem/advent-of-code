@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import CubeConundrumSolution from './solution';
 import FetchGist from '@/utils/FetchGist';
 import PageHeading from '@/ui/PageHeading';
+import SyntaxHighlight from '@/ui/Highlight';
 
 export default async function CubeConundrum() {
     const input = await fs.readFile(process.cwd() + '/input/day-2.txt', 'utf8');
@@ -12,7 +13,8 @@ export default async function CubeConundrum() {
     return (
         <>
             <PageHeading title="Day 2: Cube Conundrum" />
-            <CubeConundrumSolution solution={solution} input={input} />
+            <CubeConundrumSolution input={input} />
+            <SyntaxHighlight solution={solution} />
         </>
     )
 }

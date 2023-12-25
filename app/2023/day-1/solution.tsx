@@ -4,11 +4,7 @@ interface DigitMap {
   [key: string]: number;
 }
 
-export default function TrebuchetSolution({
-    solution, input
-} : {
-    solution: string, input: string
-}) {
+export default function TrebuchetSolution({ input } : { input: string }) {
     const sumPart1 = processPart1(input);
     const sumPart2 = processPart2(input);
 

@@ -1,5 +1,4 @@
 import SolutionDisplay from '@/ui/SolutionDisplay';
-import SyntaxHighlight from '@/ui/Highlight';
 
 interface CubeCounts {
   red: number;
@@ -7,11 +6,7 @@ interface CubeCounts {
   blue: number;
 }
 
-export default function CubeConundrumSolution({
-    solution, input
-} : {
-    solution: string, input: string
-}) {
+export default function CubeConundrumSolution({ input } : { input: string }) {
   
   // Solution for Part One
   const solveCubeConundrum = (inputData: string): number => {
@@ -79,10 +74,5 @@ export default function CubeConundrumSolution({
   const sumOfIds = input ? solveCubeConundrum(input) : 0;
   const totalPowerSum = input ? solveCubeConundrumPartTwo(input) : 0;
 
-  return (
-    <>
-      <SyntaxHighlight solution={solution} />
-      <SolutionDisplay part1Solution={sumOfIds} part2Solution={totalPowerSum} />
-    </>
-  );
+  return <SolutionDisplay part1Solution={sumOfIds} part2Solution={totalPowerSum} />;
 }
