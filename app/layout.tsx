@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Mountains_of_Christmas } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/ui/Navbar/Navbar'
-import SubNavbar from '@/ui/Navbar/SubNavbar'
 import { Providers } from './providers'
 
-const inter = Inter({ subsets: ['latin'] })
+const mountainsOfChristmas = Mountains_of_Christmas({
+  weight: ['400', '700'],
+  subsets: ['latin']
+});
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,11 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='dark'>
-      <body className={`${inter.className}`}>
+    <html lang="en" className='light'>
+      <body className={`antialiased ${mountainsOfChristmas.className}`}>
         <Providers>
           <Navbar />
-          <SubNavbar />
           <main className='p-5'>
             {children}
           </main>
