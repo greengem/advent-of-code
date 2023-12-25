@@ -6,7 +6,7 @@ import PageHeading from '@/ui/PageHeading';
 export default async function CubeConundrum() {
     const input = await fs.readFile(process.cwd() + '/input/day-2.txt', 'utf8');
 
-    const gist = 'https://raw.githubusercontent.com/greengem/advent-of-code/main/app/2023/day-2/page.tsx';
+    const gist = 'https://raw.githubusercontent.com/greengem/advent-of-code/main/app/2023/day-2/solution.tsx';
     const solution = await FetchGist({ gistUrl: gist});
 
     return (
