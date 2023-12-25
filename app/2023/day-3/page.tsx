@@ -13,8 +13,8 @@ export default async function GearRatios() {
     return (
         <>
             <PageHeading title="Day 3: Gear Ratios" />
-            <SyntaxHighlight solution={solution} />
             <TrebuchetSolution input={input} />
+            <SyntaxHighlight solution={solution} />
         </>
     );
 }

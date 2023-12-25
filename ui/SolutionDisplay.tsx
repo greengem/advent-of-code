@@ -6,7 +6,7 @@ interface SolutionBlockProps {
 }
 
 const SolutionBlock: React.FC<SolutionBlockProps> = ({ title, solution }) => (
-    <div className="text-center flex flex-col items-center justify-center">
+    <div className="text-center flex flex-col items-center justify-center bg-white text-green-700 p-5 rounded-2xl shadow-xl">
         <h4 className="text-4xl font-bold">{title}</h4>
         <div className="flex justify-center">
             <IconGift size={128} />
@@ -22,7 +22,7 @@ interface SolutionDisplayProps {
 
 const SolutionDisplay: React.FC<SolutionDisplayProps> = ({ part1Solution, part2Solution }) => {
     return (
-        <div className="grid grid-cols-2 max-w-lg mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
             <SolutionBlock title="Part 1 Answer" solution={part1Solution} />
             <SolutionBlock title="Part 2 Answer" solution={part2Solution} />
         </div>

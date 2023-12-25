@@ -22,10 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='light'>
-      <body className={`antialiased ${mountainsOfChristmas.className}`}>
+      <body className={`antialiased bg-red-500 text-white ${mountainsOfChristmas.className}`}>
         <Providers>
           <Navbar />
-          <main className='p-5'>
+          <main className='p-5 max-w-2xl mx-auto'>
             {children}
           </main>
         </Providers>

@@ -1,5 +1,4 @@
 import SolutionDisplay from '@/ui/SolutionDisplay';
-import SyntaxHighlight from '@/ui/Highlight';
 
 interface DigitMap {
   [key: string]: number;
@@ -70,10 +69,5 @@ export default function TrebuchetSolution({
         return 0;
     }
 
-    return (
-        <>
-            <SyntaxHighlight solution={solution} />
-            <SolutionDisplay part1Solution={sumPart1} part2Solution={sumPart2} />
-        </>
-    );
+    return <SolutionDisplay part1Solution={sumPart1} part2Solution={sumPart2} />;
 }

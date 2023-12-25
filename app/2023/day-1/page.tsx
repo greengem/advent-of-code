@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import TrebuchetSolution from "./solution";
 import FetchGist from '@/utils/FetchGist';
 import PageHeading from "@/ui/PageHeading";
+import SyntaxHighlight from '@/ui/Highlight';
 
 export default async function Trebuchet() {
     const input = await fs.readFile(process.cwd() + '/input/day-1.txt', 'utf8');
@@ -13,6 +14,7 @@ export default async function Trebuchet() {
         <>
             <PageHeading title="Day 1: Trebuchet" />
             <TrebuchetSolution solution={solution} input={input} />
+            <SyntaxHighlight solution={solution} />
         </>
     );
 }

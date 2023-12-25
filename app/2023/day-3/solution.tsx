@@ -29,6 +29,48 @@ export default function GearRatiosSolution({ input }: { input: string }) {
         return false;
     };
 
+    // Calculate gear ratios
+    const calculateGearRatios = (lines: string[], numbers: { num: number; x: number; y: number }[]): number => {
+        let gearRatioSum = 0;
+
+        for (let i = 0; i < lines.length; i++) {
+            for (let j = 0; j < lines[i].length; j++) {
+                if (lines[i][j] === '*') {
+                    const adjacentParts = [];
+                    for (let di = -1; di <= 1; di++) {
+                        for (let dj = -1; dj <= 1; dj++) {
+                            if (di === 0 && dj === 0) continue;
+                            const x = j + dj, y = i + di;
+                            if (x >= 0 && x < lines[i].length && y >= 0 && y < lines.length) {
+                                const part = numbers.find(n => n.x === x && n.y === y);
+                                if (part && isAdjacentToNumber(lines, part.num, x, y)) {
+                                    adjacentParts.push(part.num);
+                                }
+                            }
+                        }
+                    }
+                    if (adjacentParts.length === 2) {
+                        gearRatioSum += adjacentParts[0] * adjacentParts[1];
+                    }
+                }
+            }
+        }
+
+        return gearRatioSum;
+    };
+
+    // Check if a cell is adjacent to a specific number
+    const isAdjacentToNumber = (lines: string[], num: number, x: number, y: number): boolean => {
+        const numStr = String(num);
+        for (let i = 0; i < numStr.length; i++) {
+            if (lines[y][x + i] === numStr[i]) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+
     // Calculate the sum of part numbers
     const calculatePartNumbersSum = (schematic: string): number => {
         const lines = schematic.trim().split('\n');
@@ -59,7 +101,23 @@ export default function GearRatiosSolution({ input }: { input: string }) {
         return sum;
     };
 
+    const lines = input.trim().split('\n');
+    const numbers = [];
+
     const part1Solution = calculatePartNumbersSum(input);
 
-    return <SolutionDisplay part1Solution={part1Solution} part2Solution={0} />;
+    // Extract numbers and their positions
+    for (let i = 0; i < lines.length; i++) {
+        for (let j = 0; j < lines[i].length; j++) {
+            if (!isNaN(parseInt(lines[i][j], 10))) {
+                const [numStr, length] = extractNumber(lines, i, j);
+                numbers.push({ num: parseInt(numStr, 10), x: j, y: i });
+                j += length - 1;
+            }
+        }
+    }
+
+    const part2Solution = calculateGearRatios(lines, numbers);
+
+    return <SolutionDisplay part1Solution={part1Solution} part2Solution={part2Solution} />;
 }

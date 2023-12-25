@@ -24,7 +24,7 @@ export default function MainNavigation() {
 
             <NavbarContent justify="center">
                 <NavbarBrand>
-                    <Link className="font-bold text-white text-4xl drop-shadow-lg" href="/">Advent Of Code 2023</Link>
+                    <Link className="font-bold text-white text-xl lg:text-4xl drop-shadow-lg" href="/">Advent Of Code 2023</Link>
                 </NavbarBrand>
             </NavbarContent>
 
